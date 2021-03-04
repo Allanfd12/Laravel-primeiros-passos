@@ -12,6 +12,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+route::resource('/produtos','ProdutoControllerAutoGe'); // substitui todos os comandos abaixo, se o controller tiver exatamente esses nomes de metodos
+// se vc quiser, dá pra criar esse controller automaticamente com esses paramentros usando >>> php artisan make:controller ProdutoControllerAutoGe --resource
+/* pronto, tem jeito mais rapido de fazer isso tudo...
 Route::delete('/produtos/{idProduto}', 'ProdutoController@destroy' )->name('product.destroy');// a ? apos o nome do parmetro torna ele opcional
 Route::put('/produtos/{idProduto}', 'ProdutoController@update' )->name('product.update');// a ? apos o nome do parmetro torna ele opcional
 Route::get('/produtos/{idProduto}/edit', 'ProdutoController@edit' )->name('product.edit');// a ? apos o nome do parmetro torna ele opcional
@@ -19,7 +24,7 @@ Route::get("/produtos/criar",'ProdutoController@create')->name('product.create')
 Route::get('/produtos/{idProduto}', 'ProdutoController@show' )->name('product.show');// a ? apos o nome do parmetro torna ele opcional
 Route::get("/produtos",'ProdutoController@index')->name('product.index');
 Route::post("/produtos",'ProdutoController@store')->name('product.store'); // adiciona novos produtos
-
+*/
 
 Route::get("/login", function () {
     return "login";
