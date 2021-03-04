@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-route::resource('/produtos','ProdutoControllerAutoGe'); // substitui todos os comandos abaixo, se o controller tiver exatamente esses nomes de metodos
+route::resource('/produtos','ProdutoControllerAutoGe')->middleware('auth'); // substitui todos os comandos abaixo, se o controller tiver exatamente esses nomes de metodos
 // se vc quiser, dá pra criar esse controller automaticamente com esses paramentros usando >>> php artisan make:controller ProdutoControllerAutoGe --resource
 /* pronto, tem jeito mais rapido de fazer isso tudo...
 Route::delete('/produtos/{idProduto}', 'ProdutoController@destroy' )->name('product.destroy');// a ? apos o nome do parmetro torna ele opcional

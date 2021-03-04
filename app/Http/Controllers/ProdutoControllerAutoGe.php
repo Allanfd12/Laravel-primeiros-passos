@@ -11,9 +11,12 @@ class ProdutoControllerAutoGe extends Controller
     protected $request, $user;
     public function __construct(Request $request)
     {
-       // dd($request);
+       // dd($request); // request apresenta todos os dados advindos da requisição do usuario
         $this->request = $request;
-        
+        // tem como aplicar middleare diretamente nos controllers por meio de:
+        //$this->middleware('auth'); // em todo o controller
+        //$this->middleware('auth')->only(['create', 'index']); // somente nos metodos especificados
+        $this->middleware('auth')->except('index'); // em todo o controller exceto em index
     }
 
 
