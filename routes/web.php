@@ -12,6 +12,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::delete('/produtos/{idProduto}', 'ProdutoController@destroy' )->name('product.destroy');// a ? apos o nome do parmetro torna ele opcional
+Route::put('/produtos/{idProduto}', 'ProdutoController@update' )->name('product.update');// a ? apos o nome do parmetro torna ele opcional
+Route::get('/produtos/{idProduto}/edit', 'ProdutoController@edit' )->name('product.edit');// a ? apos o nome do parmetro torna ele opcional
+Route::get("/produtos/criar",'ProdutoController@create')->name('product.create');
+Route::get('/produtos/{idProduto}', 'ProdutoController@show' )->name('product.show');// a ? apos o nome do parmetro torna ele opcional
+Route::get("/produtos",'ProdutoController@index')->name('product.index');
+Route::post("/produtos",'ProdutoController@store')->name('product.store'); // adiciona novos produtos
+
 
 Route::get("/login", function () {
     return "login";
@@ -78,9 +86,6 @@ Route::get("/redirect2", function () {
     return "Rota 02";
 });
 
-Route::get('/produtos/{idProduto?}', function ($idProduto = '') { // a ? apos o nome do parmetro torna le opcional
-    return "Produto {$idProduto}";
-});
 Route::get('/categorias/{variavel}/posts', function ($variavel) {
     return "Postas presentes na Categoria: {$variavel}";
 });
